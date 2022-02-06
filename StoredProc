@@ -1,0 +1,5 @@
+CREATE PROCEDURE `PriceOfCurrentMonth`()
+BEGIN
+	select * from pricing where(month, year) in (select monthname(curdate())
+    as month , year(curdate()) as year);
+END
